@@ -23,7 +23,7 @@ const Container = () => {
   const getDataInsideStream = (stream) => {
     channelID = stream.metadata.channelId;
     setCid(stream.metadata.channelId);
-    setStreamUrl(stream.watcherUrl.flv.url);
+    setStreamUrl(stream.recordings ? stream.recordings[0].mp4.url : stream.watcherUrl.hls.url)
     setStreamTitle(stream.title);
     setStreamDescription(stream.description);
 
